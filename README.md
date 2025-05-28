@@ -7,7 +7,7 @@
 GitHub Actions를 활용한 CI/CD 파이프라인을 구축하여 Next.js 프로젝트를 AWS S3와 CloudFront에 자동 배포합니다.  
 코드 푸시 시 다음 순서로 배포가 진행됩니다.
 
-![배포 파이프라인](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/6912169d-ce70-41bf-b624-946d4ee984eb/Untitled.png)
+![배포 파이프라인](https://github.com/user-attachments/assets/906ebf55-efb2-451d-97b5-e22fae38fb96)
 
 ### 배포 순서 요약
 
@@ -82,13 +82,6 @@ CloudFront와 같은 CDN(Content Delivery Network)을 도입함으로써 정적 
 
 ![Image](https://github.com/user-attachments/assets/5a339176-b069-4309-971a-601f48b276d0)
 ![Image](https://github.com/user-attachments/assets/46a2bc71-1b6b-4c3b-81b5-9465d34812a3)
-
-| 항목                  | S3 직접 접근 | CloudFront 사용 |
-| --------------------- | ------------ | --------------- |
-| HTML 응답 시간        | 250ms        | **90ms**        |
-| JS 파일 응답 시간     | 300ms        | **88ms**        |
-| 이미지 응답 시간      | 320ms        | **97ms**        |
-| 전체 페이지 로딩 시간 | 1.2초        | **0.48초**      |
 
 > Chrome DevTools의 Network 탭에서 측정 (Same network 조건)
 
