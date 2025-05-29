@@ -20,8 +20,8 @@ GitHub Actions를 활용한 CI/CD 파이프라인을 구축하여 Next.js 프로
 
 ## 주요 링크
 
-- **S3 웹사이트 엔드포인트**: `http://jinsoulawsbucket.s3-website-ap-southeast-2.amazonaws.com`
-- **CloudFront 도메인**: `https://dw4otricr6sk2.cloudfront.net`
+- **S3 웹사이트 엔드포인트**: [S3 웹사이트 엔드포인트](http://jinsoulawsbucket.s3-website-ap-southeast-2.amazonaws.com)
+- **CloudFront 도메인**: [CloudFront 도메인](https://dw4otricr6sk2.cloudfront.net)
 
 ## 주요 개념
 
