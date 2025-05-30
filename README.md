@@ -20,8 +20,8 @@ GitHub Actions를 활용한 CI/CD 파이프라인을 구축하여 Next.js 프로
 
 ## 주요 링크
 
-- **S3 웹사이트 엔드포인트**: [S3 웹사이트 엔드포인트](http://jinsoulawsbucket.s3-website-ap-southeast-2.amazonaws.com)
-- **CloudFront 도메인**: [CloudFront 도메인](https://dw4otricr6sk2.cloudfront.net)
+- **S3 웹사이트 엔드포인트**: [http://jinsoulawsbucket.s3-website-ap-southeast-2.amazonaws.com](http://jinsoulawsbucket.s3-website-ap-southeast-2.amazonaws.com)
+- **CloudFront 도메인**: [https://dw4otricr6sk2.cloudfront.net](https://dw4otricr6sk2.cloudfront.net)
 
 ## 주요 개념
 
@@ -76,17 +76,21 @@ CloudFront와 같은 CDN(Content Delivery Network)을 도입함으로써 정적 
 
 ### 네트워크 성능 비교 (S3 단독 vs CloudFront)
 
-![Image](https://github.com/user-attachments/assets/5a339176-b069-4309-971a-601f48b276d0)
 ![Image](https://github.com/user-attachments/assets/46a2bc71-1b6b-4c3b-81b5-9465d34812a3)
+![Image](https://github.com/user-attachments/assets/5a339176-b069-4309-971a-601f48b276d0)
 
-> Chrome DevTools의 Network 탭에서 측정 (Same network 조건)
+| 항목              | 적용 전 | 적용 후 | 개선 폭     |
+| ----------------- | ------- | ------- | ----------- |
+| DOMContentLoaded  | 272ms   | 154ms   | ↓ 118ms     |
+| 전체 로드 시간     | 766ms   | 283ms   | ↓ 483ms     |
+> Chrome DevTools의 Network 탭에서 측정
 
 ### 주요 개선 효과
 
-- ✅ **지연 시간 감소**: 정적 자산이 글로벌 엣지 로케이션에서 제공되어, 물리적 거리에 따른 지연을 줄일 수 있습니다.
-- ✅ **캐싱에 의한 리소스 절약**: 자주 변경되지 않는 파일은 CloudFront에서 캐싱되어 S3에 대한 직접 요청을 줄입니다.
-- ✅ **트래픽 부하 분산**: S3 버킷에 직접 트래픽이 몰리는 것을 방지하여 서버 부하를 줄입니다.
-- ✅ **장애 대응 향상**: 엣지 서버를 통해 일부 S3 이슈 발생 시에도 서비스 지속 가능성이 향상됩니다.
+-  **지연 시간 감소**: 정적 자산이 글로벌 엣지 로케이션에서 제공되어, 물리적 거리에 따른 지연을 줄일 수 있습니다.
+-  **캐싱에 의한 리소스 절약**: 자주 변경되지 않는 파일은 CloudFront에서 캐싱되어 S3에 대한 직접 요청을 줄입니다.
+-  **트래픽 부하 분산**: S3 버킷에 직접 트래픽이 몰리는 것을 방지하여 서버 부하를 줄입니다.
+-  **장애 대응 향상**: 엣지 서버를 통해 일부 S3 이슈 발생 시에도 서비스 지속 가능성이 향상됩니다.
 
 ### 도입 요약
 
